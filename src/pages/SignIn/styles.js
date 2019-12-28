@@ -1,3 +1,4 @@
+import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
@@ -15,7 +16,7 @@ export const FormInput = styled.TextInput.attrs({
 })`
     align-self: stretch;
     border-color: #999;
-    border-width: 1px;
+    border-width: ${StyleSheet.hairlineWidth}px;
     border-radius: 4px;
     height: 55px;
     padding: 0 20px;

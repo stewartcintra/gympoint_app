@@ -1,24 +1,34 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Image } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import logo from '../../assets/logo.png';
+const data = [1,2,3,4,5,6];
 
-import { Container, Header, Logo } from './styles';
+import logo from '../../assets/logoHeader.png';
+
+import { Container, Button, ButtonText, List, Checkin, CheckinTitle, CheckinText } from './styles';
 
 export default function Check() {
     return (
         <Container>
-            <Header>
-                <Logo source={logo} />
-            </Header>
 
-            <Text>teste</Text>
+            <Button>
+                <ButtonText>Novo check-in</ButtonText>
+            </Button>
+
+            <List 
+                data={data}
+                keyExtractor={item => String(item)}
+                renderItem={({ item }) => (
+                    <Checkin>
+                        <CheckinTitle>Check-in #{item}</CheckinTitle>
+                        <CheckinText>Hoje as 14hs</CheckinText>
+                    </Checkin>
+                )}
+            />
         </Container>
     );
 }
 
-// Checkins.navigationOptions = {
-//     tabBarLabel: 'Check-ins',
-//     tabBarIcon: ({ tintColor }) => <Icon name="edit-location" size={25} color={tintColor} />
-// }
+Check.navigationOptions = {
+    headerTitle: (<Image source={logo} style={{ width: 133, height: 30 }}/>),
+}

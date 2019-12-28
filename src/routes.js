@@ -6,10 +6,15 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Chek from './pages/Check';
+
 import Help from './pages/Help';
+import NewHelp from './pages/NewHelp';
+import HelpDetails from './pages/HelpDetails';
 
 const CheckNavigator = createStackNavigator({
     Chek,
+}, {
+    headerLayoutPreset: 'center',
 });
 
 CheckNavigator.navigationOptions = {
@@ -19,6 +24,10 @@ CheckNavigator.navigationOptions = {
 
 const HelpNavigator = createStackNavigator({
     Help,
+    NewHelp,
+    HelpDetails,
+}, {
+    headerLayoutPreset: 'center',
 });
 
 HelpNavigator.navigationOptions = {
